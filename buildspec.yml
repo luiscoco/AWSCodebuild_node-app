@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
+      - echo Logging in to Amazon ECR Public...
       - aws --version
       - $(aws ecr-public get-login-password --region eu-west-3 | docker login --username AWS --password-stdin public.ecr.aws/x6y4g2f4)
       - REPOSITORY_URI=public.ecr.aws/x6y4g2f4/repositoriopruebasluiscocoenriquez
